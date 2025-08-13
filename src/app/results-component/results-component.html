@@ -1,0 +1,34 @@
+@if(!outputData)
+{
+    <p class="center"> Kindly fill the form and click on Calculate.</p>
+}
+@else
+{
+    <table>
+    <thead>
+       <tr>
+        <th>Year</th>
+        <th>Total Amount Invested</th>
+        <th>Annual Investment</th>
+        <th>Interest</th>
+        <th>Value End Of the Year</th>
+       </tr> 
+    </thead>
+
+    <tbody>
+            @for (item of outputData; track item.year) 
+            {
+                <tr>
+                <td>{{item.year}}</td>
+                <td>{{item.totalAmountInvested | currency:'INR'}}</td>
+                <td>{{item.annualInvestment | currency:'INR'}}</td>
+                <td>{{item.interest | currency:'INR'}}</td>
+                <td>{{item.valueEndOfYear | currency:'INR'}}</td>
+                </tr>
+            }
+    </tbody>
+
+</table>
+}
+
+
